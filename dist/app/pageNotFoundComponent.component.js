@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var PageNotFoundComponent = (function () {
-    function PageNotFoundComponent() {
+    function PageNotFoundComponent(router) {
+        this.router = router;
     }
     PageNotFoundComponent.prototype.goHome = function () {
-        window.location.href = "/";
+        this.router.navigate(['about']);
     };
     PageNotFoundComponent = __decorate([
         core_1.Component({
             template: "<h1>Page not found....</h1>\n  <button (click)=\"goHome()\" class=\"badge\"> Go Home </button>\n  ",
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router])
     ], PageNotFoundComponent);
     return PageNotFoundComponent;
 }());

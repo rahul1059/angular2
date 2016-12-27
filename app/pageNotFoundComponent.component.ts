@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   template: `<h1>Page not found....</h1>
@@ -7,8 +8,9 @@ import { Component } from '@angular/core';
 })
 
 export class PageNotFoundComponent  {
+	constructor(private router: Router){}
 	goHome(){
-		window.location.href = "/"
+		this.router.navigate(['about']);
 	}
 }
 

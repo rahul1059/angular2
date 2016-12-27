@@ -1,6 +1,22 @@
-<div class="">
-  <h1>{{name}} <blockquote class="pull-right">26 & 27 Dec 2016</blockquote></h1>
-</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="">{{name}}</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="" class="active">Home</a></li>
+			<li><a routerLink="about">About Us</a></li>
+			<li><a routerLink="contact">Contact Us</a></li>
+			<li><a routerLink="parent">Parent Child</a></li>
+			<li><a routerLink="form">Add New User</a></li>
+    </ul>
+     <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" class="navbar-brand"><span class=""></span>26 & 27 Dec 2016</a></li>
+      <li><a href="#" class="navbar-brand"><span class=""></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 
 <router-outlet></router-outlet>
