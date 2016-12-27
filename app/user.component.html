@@ -1,0 +1,27 @@
+<div class="well well-lg">
+	<button class="btn btn-success btn-lg" (click)="winner = decalreWinner()">Decalre Winner</button>
+	<label>{{timeNow}}</label>
+	<label class="pull-right">{{winner}}</label>
+</div>
+<ul>
+	<li *ngFor="let user of users" class="well list-unstyled">
+	<img [src]="user.image" width="70" height="70">
+	<em class="pull-right">
+		Total Votes: {{user.vote}}<br>
+		<input type="number" name="" [value]="user.vote" (change)="user.vote=$event.target.value"/>
+		<button class="btn btn-primary btn-sm" (click)="addVote(user)" >Vote Me!!</button>
+		<input type="text" [(ngModel)]="user.firstName">
+	</em>
+	<h2>{{user.firstName | uppercase}} {{user.lastName | uppercase}}</h2>
+	<p>Date of birth: {{user.dob}}</p>
+	<p *ngIf="user.employed===true" styleDirective>Income: {{user.income | doubleMe | currency: 'USD' : true}}</p>
+	<p *ngIf="user.employed===false" class="notWorking">{{user.firstName}} is not employed</p>
+	<div [class.feature]="user.feature" width="50" height="50">
+		Just An Example DIVISION.
+	</div>
+	</li>
+</ul>
+
+<h5>Total income contribution: {{totIncome() | doubleMe | currency: 'USD' : true}}</h5>
+
+

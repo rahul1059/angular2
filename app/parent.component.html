@@ -1,0 +1,12 @@
+<div class="container parent">
+	<div class="container">
+		<h1>Parent Component</h1>
+		<p>Enter Text: <input type="text" name="" #parentCtrl (keyup)=0></p>
+	</div>
+	<div class="container">
+		<p class="lead">Child Value: {{childValue}}</p>
+	</div>
+	<div class="container child">
+		<child-comp [parentValue]="parentCtrl.value" (childChanged)="childValue = $event"></child-comp>
+	</div>
+</div>
